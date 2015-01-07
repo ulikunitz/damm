@@ -13,19 +13,13 @@ func TestDamm(t *testing.T) {
 	}
 	s1 := s + c
 	t.Logf("s1 %s s %s c %s", s1, s, c)
-	f, err := Validate(s1)
-	if err != nil {
-		t.Fatalf("Validate error %s", err)
-	}
-	if !f {
+	ok := Validate(s1)
+	if !ok {
 		t.Errorf("validate %s failed", s1)
 	}
 	s2 := "5274"
-	f, err = Validate(s2)
-	if err != nil {
-		t.Fatalf("Validate error %s", err)
-	}
-	if f {
+	ok = Validate(s2)
+	if ok {
 		t.Errorf("validate %s returned true", s2)
 	}
 }
@@ -38,11 +32,8 @@ func TestDamm2(t *testing.T) {
 	}
 	t.Logf("check digit for %s: %s", s, c)
 	s2 := "123156789018"
-	f, err := Validate(s2)
-	if err != nil {
-		t.Fatalf("Validate %s error %s", s2, err)
-	}
-	if f {
+	ok := Validate(s2)
+	if ok {
 		t.Errorf("validate %s returned true", s2)
 	}
 }

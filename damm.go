@@ -2,12 +2,13 @@
 // method proposed by H. Michael Damm in 2004. The checksum doesn't change for
 // leading zeroes.
 //
-// The function CheckDigit computes the check sum:
+// The function CheckDigit computes the check sum as string:
 //
 //   c, err := CheckDigit("12345678901")
-// The function Validate verifies digits that have the check digit appended.
 //
-//   f, err := Validate("123456789018")
+// The function Validate checks whether the appended check digit is correct.
+//
+//   ok := Validate("123456789018")
 //
 package damm
 
@@ -53,8 +54,8 @@ func checkInt(a []int8) int {
 	return int(c)
 }
 
-// CheckDigit computes the check digit and returns it as string. The digits
-// string must contain only digits.
+// CheckDigit computes the check digit and returns it as string. The function
+// argument must only contain decimal digits.
 func CheckDigit(digits string) (c string, err error) {
 	a, err := convert(digits)
 	if err != nil {
@@ -65,12 +66,13 @@ func CheckDigit(digits string) (c string, err error) {
 	return
 }
 
-// Validate checks the sequence of digits. The digits string must only contain
-// digits.
-func Validate(digits string) (f bool, err error) {
+// Validate checks a number with the check digit appended. The function returns
+// true only if the argument contains only decimal digits and the appended
+// check digit is correct.
+func Validate(digits string) bool {
 	a, err := convert(digits)
 	if err != nil {
-		return false, err
+		return false
 	}
-	return checkInt(a) == 0, nil
+	return checkInt(a) == 0
 }
