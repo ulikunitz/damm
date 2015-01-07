@@ -10,6 +10,10 @@
 //
 //   ok := Validate("123456789018")
 //
+// Information about the algorithm is available on Wikipedia.
+//
+// http://en.wikipedia.org/wiki/Damm_algorithm
+//
 package damm
 
 import (

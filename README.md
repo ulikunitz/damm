@@ -18,3 +18,9 @@ The function Validate verifies digits with the check digit appended.
 
 The function returns true if the argument contains only decimal digits and
 the appended check digit is correct.
+
+## Algorithm
+
+More information about the algorithm can be found in Wikipedia.
+
+http://en.wikipedia.org/wiki/Damm_algorithm
