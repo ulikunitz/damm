@@ -6,7 +6,7 @@ decimal digits. It uses an algorithm proposed by H. Michael Damm in
 
 ## Examples
 
-The function CheckDigit computes and returns it in a string.
+The function CheckDigit computes and returns it as string.
 
     c, err := CheckDigit("12345678901")
 
