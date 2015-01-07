@@ -1,7 +1,8 @@
-# DAMM
+# Package damm
 
-The GO package provides the computation of a decimal checksum using the
-method proposed by H. Michael Damm in 2004.
+The Go language package damm computes a check digit for a string of
+decimal digits. It uses an algorithm proposed by H. Michael Damm in
+2004.
 
 ## Examples
 
