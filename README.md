@@ -2,3 +2,19 @@
 
 The GO package provides the computation of a decimal checksum using the
 method proposed by H. Michael Damm in 2004.
+
+## Examples
+
+The function CheckDigit computes and returns it in a string.
+
+    c, err := CheckDigit("12345678901")
+
+The argument must contain only decimal digits. Otherwise an error is
+reported.
+
+The function Validate verifies digits with the check digit appended.
+
+    ok := Validate("123456789018")
+
+The function returns true if the argument contains only decimal digits and
+the appended check digit is correct.
